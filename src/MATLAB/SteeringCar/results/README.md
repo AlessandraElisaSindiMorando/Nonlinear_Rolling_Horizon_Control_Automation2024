@@ -4,7 +4,7 @@ The out variable has been saved in the **out** file.
 
 Run the **ResultsScript** script to plot all figures. The .fig file have been obtained by running the indicated file.
 <p align="center">
-<img src="Figure5.png">
+<img src="Figure_5.eps">
 </p>
 The following text is also displayed
 
