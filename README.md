@@ -1,1 +1,5 @@
-# Nonlinear_Rolling_Horizon_Control_Automation2024
+# Nonlinear Rolling Horizon Control and Estimation Approaches for Unmanned Air-Ground Vehicles Manoeuvres
+
+This repository contains all the source code developped for the article entitled "_Nonlinear Rolling Horizon Control and Estimation Approaches for Unmanned Air-Ground Vehicles Manoeuvres_" submitted to [Automation journal Special Issue "Model Predictive Control: Advances in Sensor Technologies and Applications"](https://www.mdpi.com/journal/automation/special_issues/6FJJ7YR0AW).
+
+In this paper, Nonlinear Model Predictive Control (NMPC) and Nonlinear Moving Horizon Estimator (NMHE) are combined to control in a distributed way a heterogeneous fleet composed of a steering car and a quadcopter. In particular, the ground vehicle in the role of the leader communicates its one-step future position to the drone which keeps the formation along the desired trajectory. Inequality constraints are introduced in a switching control fashion to the leader’s NMPC formulation to avoid obstacles. Results show that the ground car can avoid detected obstacles keeping the tracking errors of both robots in the order of a few centimetres thanks to trustworthy NMHE’s estimates and NMPC's predictions. 
