@@ -1,3 +1,10 @@
+% To remove all from the Workspace and console
+clear; clc;
+% To close all figures
+close all
+%=========================================================================
+
+
 % Retrieve all data from out variable in the .mat file
 load('out.mat')
 
