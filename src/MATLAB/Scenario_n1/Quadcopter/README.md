@@ -14,7 +14,7 @@ For more details see files **UAV_parameters**, **Optitrack_parameters**,
 ```shell
 >> clear
 >> load('SimulationParameters.mat')
->> load('XYThetaVPred_wObstacles.mat')
+>> load('XYThetaVPred_Scenario1.mat')
 ```
 
 The parameters have been chosen according to the data sheet of the [Optitrack](https://optitrack.com/applications/virtual-production/) mocap system and the[Parrot BEBOP 2.0](https://www.parrot.com/assets/s3fs-public/2021-09/bebop-2_user-guide_uk.pdf) drone.

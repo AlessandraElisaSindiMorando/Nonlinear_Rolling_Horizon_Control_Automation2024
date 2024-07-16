@@ -6,9 +6,9 @@ close all
 
 % Load all the data of the two simulations
 % + the results related to the quadcopter simulation
-load('out.mat');
+load('out_Scenario1.mat');
 % + the resulting state related to the ground robot simulation
-load('UGVState.mat')
+load('XSim_Scenario1.mat')
 
 % UAV results
 %-------------------------------------------------------------------------

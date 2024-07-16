@@ -34,20 +34,22 @@ ground_z = zeros(1,1201);
 %ground_z_5Sec = zeros(size(XYZPsiRef5Sec(:,1)));
 
 % Plot the quadcopter trajectory
-plot3(XYZPsi(:,1),XYZPsi(:,2),XYZPsi(:,3),'k-','linewidth',1,'Color','black');
+plot3(XYZPsi(:,1),XYZPsi(:,2),XYZPsi(:,3),'k-','linewidth',2,'Color',[0.6350 0.0780 0.1840]);
 
 % Hold on to plot all the trajectories in the same plot
 hold on;
 
-% DRaw the obstacle in (-1,1) and the unsafety region which is a circle of
+% Draw the obstacle in (-2,0) and the unsafety region which is a circle of
 % radius d_{SAFE} = 0.25 m and as center the obstacle
+
+% SCENARIO 1
 drawObstacle3D(-2,0,0.25)
 
 % Plot the XY-plane reference trajectory
-plot3(Ref(1,:),Ref(2,:),ground_z,'k--');
+plot3(Ref(1,:),Ref(2,:),ground_z,'k-');
 
 % Plot the steering car trajectory
-plot3(UGVXY(:,1),UGVXY(:,2),ground_z,'k-')
+plot3(UGVXY(:,1),UGVXY(:,2),ground_z,'Color',[0.4660 0.6740 0.1880], 'LineWidth',2)
 
 % Set the right names in the legend
 lgd = legend('UAV Traj.','d_{Safe}','obstacle',...
