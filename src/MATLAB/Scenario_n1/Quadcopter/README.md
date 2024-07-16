@@ -5,7 +5,9 @@ the reference,
 the Optitrack mocap, 
 the Nonlinear MPC MATLAB object, 
 and the one-step prediction of the ground robot obtained from the previous simulation
+
 $$[x(k+1|k) \  y(k+1|k) \  \theta(k+1|k) \ v(k+1|k)]^T \quad k = 0,1,\cdots$$
+
 For more details see files **UAV_parameters**, **Optitrack_parameters**,
 **UAV_nmpcobj**.
 
