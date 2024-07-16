@@ -1,5 +1,16 @@
 # Steering Car Nonlinear MPC-MHE Simulation
-To run the simulation, open and run the  **CasaDi_NMPC_MHE_UGV_circle2m** Simulink file.
+The first scenario lasts $2\,\unit{\min}$ and considers a circular trajectory centered in the origin with radius of $2\,\unit{\meter}$, described by the following equations
+$$
+    \begin{cases}
+        x_{Ref}(t) = 2 \cos \left( \frac{2\pi}{60}\,t \right)\\
+        y_{Ref}(t) = 2 \sin \left( \frac{2\pi}{60}\,t \right)\\
+        \theta_{Ref}(t) = \frac{2\pi}{60}\,t + \frac{\pi}{2}\\
+        v_{Ref}(t) = 2 \, \frac{2\pi}{60}\\
+    \end{cases}
+$$
+A static obstacle is placed along the reference trajectory in $(x_{Obs},y_{Obs}) = (-2\,\unit{\meter},0\,\unit{\meter})$.
+
+To run the simulation, open and run the  **CasaDi_NMPC_MHE_UGV_Scenario1** Simulink file.
 Before running, run the following command to load all parameters defined in the Simulink model.
 ```shell
 >>clear

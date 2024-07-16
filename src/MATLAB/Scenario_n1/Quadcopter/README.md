@@ -1,5 +1,13 @@
 # Quadcopter Nonlinear MPC-MHE Simulation
-To run the simulation, open and run the  **NMPC_MHE_UAV_CasaDi** Simulink file.
+While the UGV should track the reference, the drone should follow the leader keeping an altitude defined as 
+$$
+    z_{1,Ref}(t) = \begin{cases}
+        2 \,\unit{\meter} \quad \text{if}  \quad t < 1\,\unit{\min} \\
+        3 \,\unit{\meter} \quad \text{if}  \quad t \geq 1\,\unit{\min}
+    \end{cases}
+$$
+The aim is to demonstrate that even if the drone must increase its altitude to avoid an obstacle, the controller effectively manages this change in trajectory.
+To run the simulation, open and run the  **NMPC_MHE_UAV_CasaDi_Scenario1** Simulink file.
 Before running, run the following command to load all parameters defined in the Simulink model referring to the drone, 
 the reference,
 the Optitrack mocap, 
