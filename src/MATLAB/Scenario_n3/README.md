@@ -1,4 +1,4 @@
-# Scenario 3 : Circle with Two Obstacles
+# Scenario 3 : Lemniscate of Bernoulli with One Obstacle
 For the third simulation, Bernoulli's Lemniscate is chosen as the desired trajectory, described by the following equations
 
 $$
