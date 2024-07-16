@@ -1,6 +1,6 @@
 
 # Scenario 1 : Circle with One Obstacle
-The first scenario lasts $2\,\unit{\min}$ and considers a circular trajectory centered in the origin with radius of $2\,\unit{\meter}$, described by the following equations
+The first scenario lasts $ 2\,\text{min}$ and considers a circular trajectory centered in the origin with radius of $2\,\text{m}$, described by the following equations
 
 $$
     \begin{cases}
@@ -16,8 +16,8 @@ While the UGV should track the reference, the drone should follow the leader kee
 
 $$
     z_{1,Ref}(t) = \begin{cases}
-        2 \, text{m} \quad \text{if}  \quad t < 1\, \text{min} \\
-        3 \, text{m} \quad \text{if}  \quad t \geq 1\,\text{min}
+        2 \, \text{m} \quad \text{if}  \quad t < 1\, \text{min} \\
+        3 \, \text{m} \quad \text{if}  \quad t \geq 1\,\text{min}
     \end{cases}
 $$
 
