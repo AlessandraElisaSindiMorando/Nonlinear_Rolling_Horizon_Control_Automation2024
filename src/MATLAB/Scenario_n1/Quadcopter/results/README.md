@@ -1,5 +1,5 @@
 Once it has been run the Simulink model, in the out variable are stored all data from the simulation. 
-The out variable has been saved in the **out** file.
+The out variable has been saved in the **out_Scenario1** file.
 
 Run the **ResultsScript** script to plot all figures. The .fig file has been obtained by running the indicated file.
 <p align="center">
