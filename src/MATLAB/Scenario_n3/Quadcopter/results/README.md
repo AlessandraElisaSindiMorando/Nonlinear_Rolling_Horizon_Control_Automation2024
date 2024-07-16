@@ -1,7 +1,7 @@
 Once it has been run the Simulink model, in the out variable are stored all data from the simulation. 
-The out variable has been saved in the **out_Scenario2** file.
+The out variable has been saved in the **out_Scenario3** file.
 
-Copy all the MATLAB functions in the [results](../../../Scenario_n1/Quadcopter/results) folder of the first scenario in this folder.
+Copy all the MATLAB functions in the [results](../../../Scenario_n1/Quadcopter/results) folder of the first scenario in this folder apart the **PlotResults** MATLAB function.
 
 Run the **ResultsScript** script to plot all figures. The .fig file has been obtained by running the indicated file.
 <p align="center">
