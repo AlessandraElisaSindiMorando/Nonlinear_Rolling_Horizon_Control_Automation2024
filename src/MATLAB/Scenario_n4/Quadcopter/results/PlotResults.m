@@ -57,9 +57,9 @@ plot3(Ref(1,:),Ref(2,:),ground_z,'k-');
 % Plot the steering car trajectory
 plot3(UGVXY(:,1),UGVXY(:,2),ground_z,'Color',[0.4660 0.6740 0.1880], 'LineWidth',2)
 
-% Set the right names in the legend
-lgd = legend('UAV Traj.','d_{Safe}','obstacle',...
-    'XY Ref','UGV Traj.');
+% Set the right names in the legend (labels are displayed with LaTeX style)
+lgd = legend({'UAV Traj.','$d_{Safe}$','obstacle',...
+    'XY Ref','UGV Traj.'}, 'Interpreter','latex');
 % Put the legend nside top-right of axes (default for 2-D axes)
 lgd.Location = 'northeast';
 
@@ -78,6 +78,25 @@ fontsize(figure1,16,"points")
 
 set(gcf,'position',[100,100,1000,1000])
 set(gca, 'color', 'none');
+
+% to have the labels on the axes in LaTeX style
+set(0,'defaultTextInterpreter','latex'); 
+% to change the hyphen (-) into minus sign (−, "U+2212") on the x and y
+% axis
+yticklabels(strrep(yticklabels,'-','$-$'));
+xticklabels(strrep(yticklabels,'-','$-$'));
+
+% Export the .eps image of the two agents trajectories image
+exportgraphics(gcf,'scenario4_trajectories.eps',...   % since R2020a
+    'ContentType','vector',...
+    'BackgroundColor','none')
+
+% % Topview image
+% view(0, 90);
+% % Export the .eps image of the topview image
+% exportgraphics(gcf,'scenario4_topview.eps',...   % since R2020a
+%     'ContentType','vector',...
+%     'BackgroundColor','none')
 
 % Display metrics
 %-------------------------------------------------------------------------
