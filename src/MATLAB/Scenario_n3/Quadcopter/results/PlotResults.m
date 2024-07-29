@@ -31,7 +31,6 @@ figure1 = figure(1);
 % used in the plot of both the UGV and the reference (this last is sampled
 % every 5 seconds)
 ground_z = zeros(1,601);
-%ground_z_5Sec = zeros(size(XYZPsiRef5Sec(:,1)));
 
 % Plot the quadcopter trajectory
 plot3(XYZPsi(:,1),XYZPsi(:,2),XYZPsi(:,3),'k-','linewidth',2,'Color',[0.6350 0.0780 0.1840]);
@@ -39,19 +38,10 @@ plot3(XYZPsi(:,1),XYZPsi(:,2),XYZPsi(:,3),'k-','linewidth',2,'Color',[0.6350 0.0
 % Hold on to plot all the trajectories in the same plot
 hold on;
 
-% DRaw the obstacle in (-1,1) and the unsafety region which is a circle of
+% DRaw the obstacle in the origin and the unsafety region which is a circle of
 % radius d_{SAFE} = 0.25 m and as center the obstacle
-% t1 = 24;
-% scale = 2 / (3 - cos(2*t1*(2*pi/60)));
-% x1 = 2 * scale * cos(t1*(2*pi/60));
-% y1 = 2 * scale * sin(2*t1*(2*pi/60)) / 2;
-% t2 = 54;
-% scale = 2 / (3 - cos(2*t2*(2*pi/60)));
-% x2 = 2 * scale * cos(t2*(2*pi/60));
-% y2 = 2 * scale * sin(2*t2*(2*pi/60)) / 2;
-% drawObstacle3D(x1,y1,0.25)
-% drawObstacle3DNoShowed(x2,y2,0.25)
 
+drawObstacle3D(0,0,0.25)
 
 % Plot the XY-plane reference trajectory
 plot3(Ref(1,:),Ref(2,:),ground_z,'k-');
@@ -59,9 +49,10 @@ plot3(Ref(1,:),Ref(2,:),ground_z,'k-');
 % Plot the steering car trajectory
 plot3(UGVXY(:,1),UGVXY(:,2),ground_z,'Color',[0.4660 0.6740 0.1880], 'LineWidth',2)
 
-% Set the right names in the legend
-lgd = legend('UAV Traj.','d_{Safe}','obstacle',...
-    'XY Ref','UGV Traj.');
+% Set the right names in the legend and the interpreter to have the labels
+% in LaTeX style
+lgd = legend({'UAV Traj.','$d_{Safe}$','obstacle',...
+    'XY Ref','UGV Traj.'}, 'Interpreter','latex');
 % Put the legend nside top-right of axes (default for 2-D axes)
 lgd.Location = 'northeast';
 
@@ -78,10 +69,32 @@ grid on;
 legend('show');
 fontsize(figure1,16,"points")
 
-view(0, 90);
-
 set(gcf,'position',[100,100,1000,1000])
 set(gca, 'color', 'none');
+
+
+set(0,'defaultTextInterpreter','latex'); 
+yticklabels(strrep(yticklabels,'-','$-$'));
+xticklabels(strrep(yticklabels,'-','$-$'));
+
+% to change the hyphen into minus sign U2212
+% https://fr.mathworks.com/matlabcentral/answers/1742190-change-the-hyphen-into-minus-sign-u-2212
+strrep(yticklabels,'-','$-$');
+yticklabels(yticklabels);
+xticklabels(yticklabels);
+set(gca, 'TickLabelInterpreter', 'latex');
+
+% % Export the image as an .eps with transparent background
+% exportgraphics(gcf,'scenario3_trajectory.eps',...   % since R2020a
+%     'ContentType','vector',...
+%     'BackgroundColor','none')
+
+% Change the view to the view from the top
+view(0, 90);
+% Export the topview image as an .eps
+exportgraphics(gcf,'scenario3_topview.eps',...   % since R2020a
+    'ContentType','vector',...
+    'BackgroundColor','none')
 
 % Display metrics
 %-------------------------------------------------------------------------
