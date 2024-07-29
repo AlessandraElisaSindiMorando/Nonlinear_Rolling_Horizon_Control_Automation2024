@@ -49,9 +49,10 @@ plot3(Ref(1,:),Ref(2,:),ground_z,'k-');
 % Plot the steering car trajectory
 plot3(UGVXY(:,1),UGVXY(:,2),ground_z,'Color',[0.4660 0.6740 0.1880], 'LineWidth',2)
 
-% Set the right names in the legend
-lgd = legend('UAV Traj.','d_{Safe}','obstacle',...
-    'XY Ref','UGV Traj.');
+% Set the right names in the legend and the interpreter to have the labels
+% in LaTeX style
+lgd = legend({'UAV Traj.','$d_{Safe}$','obstacle',...
+    'XY Ref','UGV Traj.'}, 'Interpreter','latex');
 % Put the legend nside top-right of axes (default for 2-D axes)
 lgd.Location = 'northeast';
 
@@ -70,6 +71,25 @@ fontsize(figure1,16,"points")
 
 set(gcf,'position',[100,100,1000,1000])
 set(gca, 'color', 'none');
+
+% to change the hyphen into minus sign U2212
+% https://fr.mathworks.com/matlabcentral/answers/1742190-change-the-hyphen-into-minus-sign-u-2212
+strrep(yticklabels,'-','$-$');
+yticklabels(yticklabels);
+xticklabels(yticklabels);
+set(gca, 'TickLabelInterpreter', 'latex');
+
+% % Export the image as an .eps with transparent background
+% exportgraphics(gcf,'scenario2_trajectory.eps',...   % since R2020a
+%     'ContentType','vector',...
+%     'BackgroundColor','none')
+
+% Change the view to the view from the top
+view(0, 90);
+% Export the topview image as an .eps
+exportgraphics(gcf,'scenario2_topview.eps',...   % since R2020a
+    'ContentType','vector',...
+    'BackgroundColor','none')
 
 % Display metrics
 %-------------------------------------------------------------------------
